@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - AutoLog Tax Mileage Logbook</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #38bdf8;
+                --primary-dark: #0284c7;
+                --bg: #0f172a;
+                --card-bg: #1e293b;
+                --text: #f8fafc;
+                --text-muted: #94a3b8;
+                --border: #334155;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+
+        .header-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #38bdf8;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+            color: var(--text);
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-top: 32px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        p,
+        li {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 12px;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            background-color: var(--border);
+            color: var(--text);
+        }
+
+        .contact-box {
+            background-color: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 32px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>AutoLog Privacy Policy</h1>
+                <div class="subtitle">Tax Mileage & Trip Logbook • Last Updated: August 2026</div>
+            </div>
+        </div>
+
+        <h2>1. Introduction</h2>
+        <p>AutoLog ("we", "our", or "the App") is a local-first vehicle trip and mileage tracking application designed
+            for tax compliance (including SARS logbook formats). Your privacy is extremely important to us. AutoLog
+            stores all travel logs, location data, saved places, and configuration settings locally on your device.
+            AutoLog does not collect, transmit, or sell your personal information or location data on remote servers.
+        </p>
+
+        <h2>2. Data We Access & How It Is Used</h2>
+        <ul>
+            <li><strong>Location Data (Foreground and Background):</strong> AutoLog uses precise location coordinates
+                (<code>ACCESS_FINE_LOCATION</code> and <code>ACCESS_BACKGROUND_LOCATION</code>) to automatically trace
+                trip routes, calculate mileage distance, geocode start/end street addresses, and match saved location
+                tags. Background location tracking is activated ONLY when a trip is active (indicated by an active
+                foreground status bar notification).</li>
+            <li><strong>Bluetooth Device State:</strong> AutoLog monitors Bluetooth connection states
+                (<code>BLUETOOTH_CONNECT</code> / <code>BLUETOOTH_SCAN</code>) solely to detect when your phone connects
+                to your vehicle's audio system to start and stop trip recording automatically.</li>
+            <li><strong>Biometric Lock:</strong> If enabled, authentication uses Android's native
+                <code>BiometricPrompt</code> system. AutoLog never stores or accesses raw biometric credentials.
+            </li>
+            <li><strong>Local Storage & Exports:</strong> All trip entries and settings stay on your device in a local
+                SQLite database. Exported CSV files or backups are generated locally and shared only when you explicitly
+                invoke Android's native share sheet.</li>
+        </ul>
+
+        <h2>3. Data Sharing & Third-Party Services</h2>
+        <p>We do not operate remote servers or databases, nor do we integrate third-party advertising, analytics, or
+            user-tracking frameworks. Your data is never sold, shared, or uploaded automatically.</p>
+
+        <h2>4. Data Retention & Control</h2>
+        <p>You retain full control to edit, reclassify, or delete individual trip records and saved locations inside the
+            app at any time. Uninstalling AutoLog or clearing app storage immediately and permanently removes all saved
+            data from your device.</p>
+
+        <h2>5. Required App Permissions</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Permission</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>ACCESS_FINE_LOCATION</code></td>
+                    <td>Calculates precise trip mileage distance and determines start/stop addresses.</td>
+                </tr>
+                <tr>
+                    <td><code>ACCESS_BACKGROUND_LOCATION</code></td>
+                    <td>Allows continuous automatic trip recording when driving with the screen off.</td>
+                </tr>
+                <tr>
+                    <td><code>BLUETOOTH_CONNECT</code></td>
+                    <td>Detects vehicle hands-free connection to start/stop automatic logging.</td>
+                </tr>
+                <tr>
+                    <td><code>FOREGROUND_SERVICE_LOCATION</code></td>
+                    <td>Displays an active recording notification in the system tray during trip tracking.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="contact-box">
+            <h3 style="margin-top:0; color:var(--primary);">Contact Information</h3>
+            <p style="margin-bottom:0;">If you have any questions or feedback regarding this Privacy Policy, please
+                reach out to:</p>
+            <p><strong>Email:</strong> eugenekoenn@gmail.com<br><strong>Application:</strong> AutoLog Tax Mileage
+                Logbook</p>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 AutoLog. All rights reserved.
+        </div>
+    </div>
+</body>
+
+</html>
