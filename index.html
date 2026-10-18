@@ -124,6 +124,15 @@
             color: var(--text);
         }
 
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         .contact-box {
             background-color: var(--bg);
             border: 1px solid var(--border);
@@ -148,45 +157,42 @@
         <div class="header">
             <div>
                 <h1>AutoLog Privacy Policy</h1>
-                <div class="subtitle">Tax Mileage & Trip Logbook • Last Updated: August 2026</div>
+                <div class="subtitle">Tax Mileage & Trip Logbook • Last Updated: October 2026</div>
             </div>
         </div>
 
         <h2>1. Introduction</h2>
-        <p>AutoLog ("we", "our", or "the App") is a local-first vehicle trip and mileage tracking application designed
-            for tax compliance (including SARS logbook formats). Your privacy is extremely important to us. AutoLog
-            stores all travel logs, location data, saved places, and configuration settings locally on your device.
-            AutoLog does not collect, transmit, or sell your personal information or location data on remote servers.
-        </p>
+        <p>AutoLog ("we", "our", or "the App") is a local-first vehicle trip and mileage tracking application designed for global tax compliance (including USA IRS, Canada CRA, UK HMRC, European Union, and South Africa SARS logbook standards). Your privacy is extremely important to us. AutoLog stores all travel logs, location data, odometer records, saved places, and configuration settings locally on your device. AutoLog does not operate remote servers and does not collect, transmit, or sell your personal information or location data.</p>
 
         <h2>2. Data We Access & How It Is Used</h2>
         <ul>
-            <li><strong>Location Data (Foreground and Background):</strong> AutoLog uses precise location coordinates
-                (<code>ACCESS_FINE_LOCATION</code> and <code>ACCESS_BACKGROUND_LOCATION</code>) to automatically trace
-                trip routes, calculate mileage distance, geocode start/end street addresses, and match saved location
-                tags. Background location tracking is activated ONLY when a trip is active (indicated by an active
-                foreground status bar notification).</li>
-            <li><strong>Bluetooth Device State:</strong> AutoLog monitors Bluetooth connection states
-                (<code>BLUETOOTH_CONNECT</code> / <code>BLUETOOTH_SCAN</code>) solely to detect when your phone connects
-                to your vehicle's audio system to start and stop trip recording automatically.</li>
-            <li><strong>Biometric Lock:</strong> If enabled, authentication uses Android's native
-                <code>BiometricPrompt</code> system. AutoLog never stores or accesses raw biometric credentials.
-            </li>
-            <li><strong>Local Storage & Exports:</strong> All trip entries and settings stay on your device in a local
-                SQLite database. Exported CSV files or backups are generated locally and shared only when you explicitly
-                invoke Android's native share sheet.</li>
+            <li><strong>Location Data (Foreground and Background):</strong> AutoLog uses precise and approximate location coordinates (<code>ACCESS_FINE_LOCATION</code>, <code>ACCESS_COARSE_LOCATION</code>, and <code>ACCESS_BACKGROUND_LOCATION</code>) to automatically trace trip routes, calculate mileage distance (in kilometers or miles), resolve start/end street addresses, and match saved location tags (e.g., Home, Office, Client). Background location tracking is activated ONLY when a trip is actively being recorded (indicated by a persistent foreground status bar notification).</li>
+            <li><strong>Address Geocoding:</strong> Start and end GPS coordinates are converted into street addresses using Android's native on-device Geocoder (or directly via the Google Maps Geocoding API if you optionally configure your own API key in Settings).</li>
+            <li><strong>Bluetooth Device State:</strong> AutoLog monitors Bluetooth connection states (<code>BLUETOOTH_CONNECT</code> and <code>BLUETOOTH_SCAN</code>) solely to detect when your phone connects to or disconnects from your designated vehicle's hands-free audio system to start and stop trip recording automatically.</li>
+            <li><strong>Subscriptions & Payments (Google Play Billing):</strong> Subscription trials, localized currency pricing, and payments are processed securely by Google Play Billing. AutoLog only receives subscription status confirmation from the Google Play Store app and never accesses, collects, or stores your credit card, banking, or billing details.</li>
+            <li><strong>Biometric Lock:</strong> If enabled, authentication uses Android's native <code>BiometricPrompt</code> system and OS keystore. AutoLog never accesses, stores, or transmits raw biometric credentials (fingerprints or facial recognition data).</li>
+            <li><strong>Local Storage & Exports:</strong> All trip entries, odometer readings, and settings remain on your device in a local SQLite database and encrypted preferences. Exported CSV logbooks or JSON backups are generated locally and shared only when you explicitly invoke Android's native share sheet.</li>
         </ul>
 
         <h2>3. Data Sharing & Third-Party Services</h2>
-        <p>We do not operate remote servers or databases, nor do we integrate third-party advertising, analytics, or
-            user-tracking frameworks. Your data is never sold, shared, or uploaded automatically.</p>
+        <p>We do not operate remote servers or cloud databases, nor do we integrate third-party advertising, behavioral analytics, or user-tracking SDKs. Your data is never sold, rented, shared, or uploaded automatically.</p>
 
         <h2>4. Data Retention & Control</h2>
-        <p>You retain full control to edit, reclassify, or delete individual trip records and saved locations inside the
-            app at any time. Uninstalling AutoLog or clearing app storage immediately and permanently removes all saved
-            data from your device.</p>
+        <p>You retain 100% control over your data on your device. You may view, edit, reclassify, export (CSV/JSON), or permanently delete individual trip records and saved locations inside the app at any time. Uninstalling AutoLog or clearing the app's storage in Android Settings immediately and permanently removes all saved data from your device.</p>
 
-        <h2>5. Required App Permissions</h2>
+        <h2>5. International Privacy Rights (GDPR, UK GDPR, CCPA, PIPEDA & POPIA)</h2>
+        <p>Because AutoLog processes and stores your data exclusively on your local device without transmitting it to us, you have direct, immediate control over your statutory privacy rights:</p>
+        <ul>
+            <li><strong>European Economic Area (EEA) & United Kingdom (GDPR / UK GDPR):</strong> Processing of location and trip data occurs strictly locally on your device based on your explicit consent (granting runtime permissions) and to perform the logbook functionality you request. You may exercise your rights of access, rectification, erasure ("right to be forgotten"), restriction, and data portability directly within the App at any time via the Edit, Delete, and Export CSV/Backup features, or by revoking permissions in Android Settings.</li>
+            <li><strong>United States (CCPA / CPRA & State Privacy Laws):</strong> We do not "sell" or "share" your personal information or sensitive geolocation data as defined under the California Consumer Privacy Act (CCPA/CPRA) or other U.S. state privacy laws, nor do we use geolocation data for cross-context behavioral advertising.</li>
+            <li><strong>Canada (PIPEDA):</strong> All personal and trip mileage information remains under your local custody and control on your device. You may withdraw consent for automatic tracking at any time by disabling Bluetooth auto-start or revoking location permissions.</li>
+            <li><strong>South Africa (POPIA):</strong> AutoLog complies with the Protection of Personal Information Act (POPIA) by ensuring data minimization and strict local-only storage under your sole control.</li>
+        </ul>
+
+        <h2>6. Children's Privacy</h2>
+        <p>AutoLog is a tax and vehicle mileage utility intended for licensed drivers and adults. We do not knowingly collect any personal information from children under the age of 13 (or the applicable age of digital consent in your jurisdiction).</p>
+
+        <h2>7. Required App Permissions</h2>
         <table>
             <thead>
                 <tr>
@@ -196,30 +202,43 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><code>ACCESS_FINE_LOCATION</code></td>
-                    <td>Calculates precise trip mileage distance and determines start/stop addresses.</td>
+                    <td><code>ACCESS_FINE_LOCATION</code> / <code>ACCESS_COARSE_LOCATION</code></td>
+                    <td>Calculates precise trip mileage distance and determines start/stop street addresses.</td>
                 </tr>
                 <tr>
                     <td><code>ACCESS_BACKGROUND_LOCATION</code></td>
-                    <td>Allows continuous automatic trip recording when driving with the screen off.</td>
+                    <td>Allows continuous automatic trip recording when driving with the screen off or while using navigation apps.</td>
                 </tr>
                 <tr>
-                    <td><code>BLUETOOTH_CONNECT</code></td>
-                    <td>Detects vehicle hands-free connection to start/stop automatic logging.</td>
+                    <td><code>BLUETOOTH_CONNECT</code> / <code>BLUETOOTH_SCAN</code></td>
+                    <td>Detects your selected vehicle's hands-free Bluetooth connection to start and stop automatic trip logging.</td>
                 </tr>
                 <tr>
-                    <td><code>FOREGROUND_SERVICE_LOCATION</code></td>
-                    <td>Displays an active recording notification in the system tray during trip tracking.</td>
+                    <td><code>FOREGROUND_SERVICE</code> / <code>FOREGROUND_SERVICE_LOCATION</code></td>
+                    <td>Displays an active recording notification in the Android system tray during live trip tracking.</td>
+                </tr>
+                <tr>
+                    <td><code>POST_NOTIFICATIONS</code></td>
+                    <td>Displays active trip status alerts and post-trip classification prompts (Business vs. Personal).</td>
+                </tr>
+                <tr>
+                    <td><code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code></td>
+                    <td>Prevents the Android OS from prematurely terminating the tracking service during long drives.</td>
+                </tr>
+                <tr>
+                    <td><code>USE_BIOMETRIC</code></td>
+                    <td>Allows optional fingerprint or face unlock protection when opening your logbook.</td>
                 </tr>
             </tbody>
         </table>
 
+        <h2>8. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect app enhancements or regulatory requirements. The updated version will always be available inside the App and indicated by the "Last Updated" date at the top of this policy.</p>
+
         <div class="contact-box">
-            <h3 style="margin-top:0; color:var(--primary);">Contact Information</h3>
-            <p style="margin-bottom:0;">If you have any questions or feedback regarding this Privacy Policy, please
-                reach out to:</p>
-            <p><strong>Email:</strong> eugenekoenn@gmail.com<br><strong>Application:</strong> AutoLog Tax Mileage
-                Logbook</p>
+            <h2 style="margin-top:0; border-left:none; padding-left:0; color:var(--primary);">9. Contact Information</h2>
+            <p style="margin-bottom:0;">If you have any questions, privacy requests, or feedback regarding this Privacy Policy, please reach out to:</p>
+            <p><strong>Email:</strong> <a href="mailto:eugenekoenn@gmail.com">eugenekoenn@gmail.com</a><br><strong>Application:</strong> AutoLog Tax Mileage Logbook</p>
         </div>
 
         <div class="footer">
